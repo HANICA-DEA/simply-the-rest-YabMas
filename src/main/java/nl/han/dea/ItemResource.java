@@ -50,4 +50,13 @@ public class ItemResource {
                 .build();
     }
 
+    @DELETE
+    @Path("{id}")
+    public Response deleteItem(@PathParam("id") int id){
+        itemservice.deleteItem(id);
+        return Response
+                .status(Response.Status.OK)
+                .build();
+    }
+
 }
