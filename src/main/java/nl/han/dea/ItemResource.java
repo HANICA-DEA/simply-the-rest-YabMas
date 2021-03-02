@@ -14,7 +14,7 @@ import javax.ws.rs.core.Response;
 @Singleton
 public class ItemResource {
 
-    private final ItemService itemservice;
+    ItemService itemservice;
 
     public ItemResource() {
         this.itemservice = new ItemService();
@@ -23,7 +23,7 @@ public class ItemResource {
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllItemsAsText() {
+    public Response getAllItemsAsJson() {
         return Response
                 .status(Response.Status.OK)
                 .entity(itemservice.getAll())
