@@ -1,7 +1,6 @@
 package nl.han.dea.services.exceptions;
 
 import nl.han.dea.services.dto.ExceptionDTO;
-import nl.han.dea.services.dto.ItemDTO;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;

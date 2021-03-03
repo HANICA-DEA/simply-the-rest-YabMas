@@ -2,18 +2,15 @@ package nl.han.dea;
 
 import nl.han.dea.services.ItemService;
 import nl.han.dea.services.dto.ItemDTO;
-
-import java.util.ArrayList;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -22,14 +19,13 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class ItemResourceTest {
 
-    private ItemResource sut;
-
     @Mock
     ItemService itemServiceMock = new ItemService();
+    private final ItemResource sut = new ItemResource();
 
     @BeforeEach
     public void setup() {
-        sut = new ItemResource();
+        //sut = new ItemResource();
         sut.itemservice = itemServiceMock;
     }
 
@@ -70,14 +66,14 @@ class ItemResourceTest {
     }
 
     @Test
-    public void callsItemservicesAddItemMethod(){
+    public void callsItemservicesAddItemMethod() {
         var item = new ItemDTO();
         sut.addItem(item);
         verify(itemServiceMock).addItem(item);
     }
 
     @Test
-    public void callsItemservicesDeleteItemMethod(){
+    public void callsItemservicesDeleteItemMethod() {
         sut.deleteItem(1);
         verify(itemServiceMock).deleteItem(1);
     }

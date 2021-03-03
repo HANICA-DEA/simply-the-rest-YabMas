@@ -3,7 +3,6 @@ package nl.han.dea;
 import nl.han.dea.services.ItemService;
 import nl.han.dea.services.dto.ItemDTO;
 
-
 import javax.ejb.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -43,7 +42,7 @@ public class ItemResource {
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response addItem(ItemDTO item){
+    public Response addItem(ItemDTO item) {
         itemservice.addItem(item);
         return Response
                 .status(Response.Status.CREATED)
@@ -52,7 +51,7 @@ public class ItemResource {
 
     @DELETE
     @Path("{id}")
-    public Response deleteItem(@PathParam("id") int id){
+    public Response deleteItem(@PathParam("id") int id) {
         itemservice.deleteItem(id);
         return Response
                 .status(Response.Status.OK)

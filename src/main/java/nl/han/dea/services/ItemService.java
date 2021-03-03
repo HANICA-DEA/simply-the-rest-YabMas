@@ -15,13 +15,7 @@ import java.util.stream.Collectors;
  */
 public class ItemService {
 
-    private List<ItemDTO> items = new ArrayList<>();
-
-    public ItemService() {
-        items.add(new ItemDTO(1, "Bread", new String[]{"Breakfast, Lunch"}, "Delicious!"));
-        items.add(new ItemDTO(2, "Butter", new String[]{"Breakfast, Lunch"}, "Use it with bread"));
-        items.add(new ItemDTO(3, "Honey", new String[]{"Breakfast, Lunch"}, "Use it with bread"));
-    }
+    List<ItemDTO> items = new ArrayList<>();
 
     /**
      * Return the full {@link List} of {@link ItemDTO} instances.
